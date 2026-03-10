@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import API_URL from "../config/api"
 
 function Provider() {
 
@@ -104,7 +105,7 @@ const userId = localStorage.getItem("userId")
 const name = localStorage.getItem("name")
 
 await axios.put(
-"http://localhost:5000/api/providers/service",
+`${API_URL}/api/providers/service`,
 {
 name,
 serviceId,
@@ -141,7 +142,7 @@ return
 }
 
 await axios.post(
-"http://localhost:5000/api/services",
+`${API_URL}/api/services`,
 { name:newService }
 )
 

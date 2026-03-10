@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-
+import API_URL from "../config/api"
 function Services(){
 
 const [services,setServices] = useState([])
@@ -17,7 +17,7 @@ const fetchServices = async()=>{
 
 try{
 
-const res = await axios.get("http://localhost:5000/api/services")
+const res = await axios.get(`${API}/api/services`)
 
 setServices(res.data)
 

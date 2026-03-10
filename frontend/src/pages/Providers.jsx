@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {useNavigate} from "react-router-dom"
-import { FaUserTie } from "react-icons/fa"
 import axios from "axios"
+import API_URL from "../config/api"
 
 function Providers(){
 
@@ -20,7 +20,7 @@ const fetchProviders = async () => {
 try{
 
 const res = await axios.get(
-`http://localhost:5000/api/providers/service/${serviceId}`
+`${API_URL}/api/providers/service/${serviceId}`
 )
 
 setProviders(res.data)
@@ -41,7 +41,7 @@ const date = prompt("Enter Date (YYYY-MM-DD)")
 const timeSlot = prompt("Enter Time Slot (eg: 10AM)")
 
 await axios.post(
-"http://localhost:5000/api/bookings",
+`${API_URL}/api/bookings`,
 {
 providerId,
 userId,

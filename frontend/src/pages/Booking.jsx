@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import "../App.css"
+import API_URL from "../config/api"
 
 function Booking(){
 
@@ -12,7 +13,7 @@ const [timeSlot,setTimeSlot] = useState("")
 
 const bookService = async()=>{
 
-await axios.post("http://localhost:5000/api/bookings",{
+await axios.post(`${API_URL}/api/bookings`,{
 
 userId: localStorage.getItem("userId"),
 providerId,
