@@ -1,0 +1,441 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 100%;
+  background: white;
+  padding: 18px 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;   /* keeps navbar on top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ================= PAGE CONTAINER ================= */
+
+.page-container{
+max-width:1200px;
+margin:120px auto 40px;
+padding:0 20px;
+}
+
+/* LOGIN PAGE FULL CENTER */
+
+.login-page{
+min-height:calc(100vh - 80px);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* LOGIN BOX */
+
+.auth-container{
+width:380px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+
+/* ================= LOGIN ================= 
+
+.auth-container{
+width:380px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+margin:120px auto;
+text-align:center;
+}
+
+.auth-container input{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:1px solid #ddd;
+border-radius:6px;
+outline:none;
+}
+
+.auth-container button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:6px;
+background:#10b981;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.auth-container button:hover{
+background:#059669;
+}
+*/
+
+/* LOGIN + REGISTER CARD */
+
+/* Register / Login container */
+
+.auth-container{
+width:380px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+margin:auto;
+}
+
+/* Title */
+
+.auth-container h2{
+color:#065f46;
+margin-bottom:20px;
+}
+
+/* Inputs */
+
+.auth-container input,
+.auth-container select{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:1px solid #d1fae5;
+border-radius:6px;
+font-size:14px;
+outline:none;
+}
+
+.auth-container input:focus,
+.auth-container select:focus{
+border-color:#10b981;
+}
+
+/* Buttons */
+
+.auth-container button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:6px;
+background:#10b981;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.auth-container button:hover{
+background:#059669;
+}
+
+/* Secondary button */
+
+.secondary-btn{
+background:#34d399 !important;
+}
+
+.secondary-btn:hover{
+background:#10b981 !important;
+}
+
+/* Page background */
+
+body{
+background:#ecfdf5;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+/* ================= PROVIDER DASHBOARD ================= */
+
+.provider-page{
+max-width:1200px;
+margin:120px auto 40px;
+padding:0 20px;
+}
+
+.provider-page h2{
+font-size:28px;
+margin-bottom:30px;
+}
+
+.provider-dashboard{
+display:flex;
+gap:40px;
+align-items:flex-start;
+}
+
+
+/* PROVIDERS PAGE */
+
+.providers-page{
+padding:40px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.providers-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:30px;
+}
+
+.provider-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.provider-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+.provider-icon{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.provider-card button{
+margin-top:12px;
+padding:8px 16px;
+border:none;
+background:#10b981;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.provider-card h3{
+color:#10b981;
+margin-bottom:6px;
+}
+
+/* ================= ADD SERVICE FORM ================= */
+
+.add-service-form{
+width:340px;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.add-service-form input,
+.add-service-form select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.add-service-form button{
+padding:10px;
+border:none;
+border-radius:6px;
+background:#10b981;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.add-service-form button:hover{
+background:#059669;
+}
+
+
+
+
+/* ================= BOOKINGS ================= */
+
+.provider-bookings{
+flex:1;
+}
+
+.booking-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+gap:25px;
+}
+
+.booking-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.booking-buttons{
+display:flex;
+gap:10px;
+margin-top:12px;
+}
+
+.accept-btn{
+background:#10b981;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.reject-btn{
+background:#ef4444;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* BOOKING PAGE */
+
+.booking-page{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:calc(100vh - 80px);
+}
+
+.booking-container{
+width:350px;
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.booking-container h2{
+margin-bottom:20px;
+}
+
+.booking-container input,
+.booking-container select{
+width:100%;
+padding:10px;
+margin-top:12px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.booking-container button{
+width:100%;
+margin-top:18px;
+padding:12px;
+background:#10b981;
+border:none;
+border-radius:6px;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.booking-container button:hover{
+background:#059669;
+}
+
+.booking-container input:focus,
+.booking-container select:focus{
+outline:none;
+border-color:#10b981;
+}
+
+
+/* ================= SERVICES PAGE ================= */
+
+.service-page{
+padding:120px 20px 40px;
+text-align:center;
+}
+
+.services-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:900px;
+margin:40px auto;
+}
+
+.service-item{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.service-item:hover{
+transform:translateY(-5px);
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+cursor:pointer;
+}
+
+.service-link{
+display:block;
+margin-top:10px;
+color:#10b981;
+font-weight:600;
+text-decoration:none;
+}
+
+.service-item h3{
+color:#10b981;
+margin-bottom:8px;
+}
