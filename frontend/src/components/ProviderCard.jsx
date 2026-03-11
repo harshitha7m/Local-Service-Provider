@@ -8,22 +8,46 @@ return(
 
 <div className="provider-card">
 
+<div className="provider-img">
+
 <img
 src={provider.image || "https://dummyimage.com/150x150/cccccc/000000&text=Provider"}
 alt="provider"
 />
 
+</div>
+
+<div className="provider-info">
+
 <h3>{provider.name}</h3>
 
-<p>📍 {provider.location}</p>
+<p className="location">📍 {provider.location}</p>
 
-<p>📞 {provider.phone}</p>
+<p className="phone">📞 {provider.phone}</p>
 
-<p>⭐ Rating: {provider.rating || "4.5"}</p>
+<div className="rating">
+⭐ {provider.rating || "4.5"}
+</div>
 
-<button onClick={()=>navigate(`/provider-details/${provider._id}`)}>
+<div className="provider-buttons">
+
+<button
+className="details-btn"
+onClick={()=>navigate(`/provider-details/${provider._id}`)}
+>
 View Details
 </button>
+
+<a
+className="call-btn"
+href={`tel:${provider.phone}`}
+>
+Call
+</a>
+
+</div>
+
+</div>
 
 </div>
 

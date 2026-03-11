@@ -1,55 +1,49 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function Navbar(){
+
+const navigate = useNavigate()
 
 const userId = localStorage.getItem("userId")
 
 const logout = () => {
-localStorage.clear()
-window.location.href = "/"
+
+localStorage.removeItem("userId")
+localStorage.removeItem("role")
+localStorage.removeItem("name")
+
+navigate("/login")
+
 }
 
 return(
 
-<div className="navbar">
+<nav className="navbar">
 
-<div className="logo">
-<Link to="/">Local Service Provider</Link>
-</div>
+<h2 className="logo">Local Service Provider</h2>
 
 <div className="nav-links">
 
 <Link to="/">Home</Link>
-
 <Link to="/services">Services</Link>
 
-</div>
+{!userId ? (
 
-<div className="auth-buttons">
+<>
+<Link to="/login" className="login-btn">Login</Link><Link to="/register" className="register-btn">Register</Link>
+</>
 
-{userId ? (
+) : (
 
 <button className="logout-btn" onClick={logout}>
 Logout
 </button>
 
-) : (
-
-<>
-<Link to="/login" className="login-btn">
-Login
-</Link>
-
-<Link to="/register" className="register-btn">
-Register
-</Link>
-</>
-
 )}
 
 </div>
 
-</div>
+</nav>
 
 )
 

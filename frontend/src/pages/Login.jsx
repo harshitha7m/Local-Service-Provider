@@ -15,25 +15,27 @@ const loginUser = async () => {
 
 try{
 
-const res = await axios.post(
-`${API_URL}/api/auth/login`,
-{ email, password }
-)
+      const res = await axios.post(
+        `${API_URL}/api/auth/login`,
+        { email, password }
+      )
 
-localStorage.setItem("userId",res.data.userId)
-localStorage.setItem("role",res.data.role)
-console.log(res.data)
+      localStorage.setItem("userId", res.data.userId)
+      localStorage.setItem("role", res.data.role)
+      localStorage.setItem("name", res.data.name)
+      console.log("Login successful:", res.data)
 
-if(res.data.role === "user"){
-navigate("/services")
-}
-else if(res.data.role === "provider"){
-navigate("/provider")
-}
+      if(res.data.role === "user"){
+        navigate("/services")
+      }
+      else if(res.data.role === "provider"){
+        navigate("/provider")
+      }
 
-}catch(err){
-alert("Login Failed")
-}
+    }catch(err){
+      console.error(err)
+      alert("Login Failed: " + (err.response?.data?.message || err.message))
+    }
 
 }
 
