@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import {useNavigate} from "react-router-dom"
 import axios from "axios"
 import API_URL from "../config/api"
+import ProviderCard from "../components/ProviderCard"
 
 function Providers(){
 
 const { serviceId } = useParams()
-const navigate = useNavigate()
 
 const [providers,setProviders] = useState([])
 
 useEffect(()=>{
 fetchProviders()
-},[])
+},[serviceId])
 
 const fetchProviders = async () => {
 
@@ -31,33 +30,6 @@ console.log(err)
 
 }
 
-const bookService = async(providerId) => {
-
-try{
-
-const userId = localStorage.getItem("userId")
-
-const date = prompt("Enter Date (YYYY-MM-DD)")
-const timeSlot = prompt("Enter Time Slot (eg: 10AM)")
-
-await axios.post(
-`${API_URL}/api/bookings`,
-{
-providerId,
-userId,
-date,
-timeSlot
-}
-)
-
-alert("Booking Successful")
-
-}catch(err){
-console.log(err)
-}
-
-}
-
 return(
 
 <div className="providers-page">
@@ -67,25 +39,14 @@ return(
 <div className="providers-grid">
 
 {
-providers.map((p)=>(
-<div className="provider-card" key={p._id}>
-
-<div className="provider-icon">👤</div>
-
-<h3>{p.name}</h3>
-
-<p>Location: {p.location}</p>
-
-<p>Phone: {p.phone}</p>
-
-<button
-onClick={()=>navigate(`/booking/${p._id}`)}
->
-Book
-</button>
-
-</div>
+providers.length === 0 ? (
+<p>No providers available</p>
+) : (
+providers.map((provider)=>(
+<ProviderCard key={provider._id} provider={provider}/>
 ))
+)
+
 }
 
 </div>

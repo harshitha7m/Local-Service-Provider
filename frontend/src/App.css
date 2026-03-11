@@ -27,25 +27,35 @@ body {
   z-index: 1000;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #10b981;
+
+.nav-links a{
+margin:0 10px;
+text-decoration:none;
+color:#333;
+font-weight:500;
 }
 
-.logout-btn {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s;
+.login-btn{
+margin-right:10px;
+text-decoration:none;
+color:#333;
 }
 
-.logout-btn:hover {
-  background: #dc2626;
+.register-btn{
+background:#10b981;
+padding:8px 15px;
+color:white;
+border-radius:6px;
+text-decoration:none;
+}
+
+.logout-btn{
+background:#ef4444;
+border:none;
+padding:8px 15px;
+color:white;
+border-radius:6px;
+cursor:pointer;
 }
 
 /* ================= PAGE CONTAINER ================= */
@@ -151,6 +161,85 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+}
+
+/* HOME PAGE */
+
+.home{
+padding-top:120px;
+text-align:center;
+}
+
+.hero{
+margin-bottom:40px;
+}
+
+.hero h1{
+font-size:36px;
+color:#1f2937;
+}
+
+.hero p{
+margin-top:10px;
+color:#555;
+}
+
+/* SEARCH BAR */
+
+.search-bar{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+.search-bar input{
+width:300px;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.search-bar button{
+padding:12px 18px;
+border:none;
+background:#10b981;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* SERVICES GRID */
+
+.popular-title{
+margin-top:40px;
+margin-bottom:20px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+max-width:700px;
+margin:auto;
+}
+
+.service-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+}
+
+.service-card:hover{
+transform:translateY(-5px);
+}
+
+.service-icon{
+font-size:30px;
+margin-bottom:10px;
 }
 
 

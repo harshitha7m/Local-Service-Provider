@@ -38,7 +38,7 @@ return
 }
 
 const res = await axios.get(
-`http://localhost:5000/api/bookings/provider/${providerRes.data._id}`
+`${API_URL}/api/bookings/provider/${providerRes.data._id}`
 )
 
 setBookings(res.data)
@@ -59,7 +59,7 @@ const updateStatus = async(id,status)=>{
 try{
 
 await axios.put(
-`http://localhost:5000/api/bookings/${id}`,
+`${API_URL}/api/bookings/${id}`,
 {status}
 )
 
@@ -81,7 +81,7 @@ const fetchServices = async () => {
 try{
 
 const res = await axios.get(
-"http://localhost:5000/api/services"
+`${API_URL}/api/services`
 )
 
 setServices(res.data)

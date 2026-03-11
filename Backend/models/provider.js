@@ -25,7 +25,12 @@ default:""
 phone:{
 type:String,
 default:""
-}
+},
+
+rating: Number,
+experience: String,
+image: String,
+description: String
 
 })
 

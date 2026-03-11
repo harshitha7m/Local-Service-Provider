@@ -68,4 +68,23 @@ res.json(provider)
 
 })
 
+// Get provider by provider ID
+router.get("/:id", async(req,res)=>{
+
+try{
+
+const provider = await Provider.findById(req.params.id)
+
+if(!provider){
+return res.status(404).json({message:"Provider not found"})
+}
+
+res.json(provider)
+
+}catch(err){
+res.status(500).json({message:"Error fetching provider"})
+}
+
+})
+
 module.exports = router

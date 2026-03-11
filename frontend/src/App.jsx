@@ -1,13 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+import Navbar from "./components/Navbar"
+
+import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Services from "./pages/Services"
 import Providers from "./pages/Providers"
-import Booking from "./pages/Booking"
 import Provider from "./pages/Provider"
+import Booking from "./pages/Booking"
+import ProviderDetails from "./pages/ProviderDetails"
+
 import ProtectedProvider from "./components/ProtectedProvider"
-import Navbar from "./components/Navbar"
 
 import "./App.css"
 
@@ -17,53 +21,39 @@ return(
 
 <BrowserRouter>
 
-<Navbar />
+<Navbar/>
+
+<div className="page-container">
 
 <Routes>
 
-<Route path="/" element={<Login />} />
+<Route path="/" element={<Home/>} />
 
-<Route path="/register" element={<Register />} />
+<Route path="/login" element={<Login/>} />
 
-<Route 
-path="/services" 
-element={
-<div className="page-container">
-<Services/>
-</div>
-} 
-/>
+<Route path="/register" element={<Register/>} />
 
-<Route 
-path="/providers/:serviceId" 
-element={
-<div className="page-container">
-<Providers/>
-</div>
-} 
-/>
+<Route path="/services" element={<Services/>} />
 
-<Route 
-path="/booking/:providerId" 
-element={
-<div className="page-container">
-<Booking/>
-</div>
-} 
-/>
+<Route path="/providers/:serviceId" element={<Providers/>} />
+
+<Route path="/provider-details/:providerId" element={<ProviderDetails/>} />
+
+<Route path="/provider-dashboard" element={<Provider />} />
+<Route path="/booking/:providerId" element={<Booking/>} />
 
 <Route
 path="/provider"
 element={
-<div className="page-container">
 <ProtectedProvider>
 <Provider/>
 </ProtectedProvider>
-</div>
 }
 />
 
 </Routes>
+
+</div>
 
 </BrowserRouter>
 
