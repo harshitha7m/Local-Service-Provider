@@ -29,7 +29,7 @@ try{
 const userId = localStorage.getItem("userId")
 
 const providerRes = await axios.get(
-`http://localhost:5000/api/providers/user/${userId}`
+`${API_URL}/api/providers/user/${userId}`
 )
 
 if(!providerRes.data){

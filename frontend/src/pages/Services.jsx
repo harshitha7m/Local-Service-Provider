@@ -17,7 +17,7 @@ const fetchServices = async()=>{
 
 try{
 
-const res = await axios.get(`${API}/api/services`)
+const res = await axios.get(`${API_URL}/api/services`)
 
 setServices(res.data)
 

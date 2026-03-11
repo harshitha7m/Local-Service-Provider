@@ -1,4 +1,3 @@
-import cors from "cors"
 require("dotenv").config()
 
 const express = require("express")
@@ -13,7 +12,10 @@ const bookingRoutes = require("./routes/bookingRoutes")
 const app = express()
 
 app.use(cors({
-origin: "https://local-service-provider-spvo.onrender.com"
+  origin: [
+    "http://localhost:5173",
+    "https://local-service-provider-pvvo.onrender.com"
+  ]
 }))
 app.use(express.json())
 
